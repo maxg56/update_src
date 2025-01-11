@@ -46,7 +46,8 @@ fi
 # Vérifier si le fichier src.mk existe
 if [[ -f "$SRC_MK" ]]; then
        if [[ $macOS == true ]]; then
-        sed -i "" "/^$VAR_NAME /c $SRC_LINE" "$SRC_MK"
+        sed -i "" "/^$VAR_NAME /c\\
+$SRC_LINE" "$SRC_MK"
     else
         sed -i "/^$VAR_NAME /c $SRC_LINE" "$SRC_MK"
     fi
